@@ -23,5 +23,5 @@ This project is a simple Spring Boot application that demonstrates how to make a
 
 ---
 
-## 📁 Project Structure
+
 
