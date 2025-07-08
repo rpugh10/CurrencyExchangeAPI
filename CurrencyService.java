@@ -1,9 +1,8 @@
-package com.api.demo.service;
-
-
+package com.example.getAPI.service;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
 
 @Service
 public class CurrencyService {
@@ -18,16 +17,17 @@ public class CurrencyService {
         this.webClient = webClient;
     }
 
-    public String getExchangeRate(String baseCurrency) {
+    public String getExchangeRates(String baseCurrency)
+    {
         return webClient.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("latest")
-                        .queryParam("apikey", apiKey)
-                        .queryParam("base_currency", baseCurrency)
-                        .build())
-
-                .retrieve()
-                .bodyToMono(String.class)
-                .block();
+        .uri(uriBuilder -> uriBuilder
+        .path("/latest")
+        .queryParam("apikey", apiKey)
+        .queryParam("base_currency", baseCurrency)
+        .build())
+        
+        .retrieve()
+        .bodyToMono(String.class)
+        .block();
     }
 }
