@@ -1,4 +1,4 @@
-# 💱 Currency Exchange API - Spring Boot WebClient (Still Debugging)
+# 💱 Currency Exchange API - Spring Boot WebClient
 
 This project is a simple Spring Boot application that demonstrates how to make an external API call using `WebClient` to fetch currency exchange rates from [CurrencyAPI](https://currencyapi.com/). 
 
